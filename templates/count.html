@@ -1,0 +1,29 @@
+<h1>Count Words</h1>
+<style media="screen">
+  td{
+    border: 1px #000 solid;
+  }
+</style>
+<h1>Your Text:</h1>
+{{text}}
+
+<h3>There are {{countWords}} words in you text.</h3>
+<a href="{% url 'home'%}"> Start Again </a>
+
+<h4>Word Count:</h4>
+<table style='border: 1px #000 solid;'>
+  <thead>
+    <tr>
+        <td><b>Words</b></td>
+        <td><b>No of Occurence</b></td>
+    </tr>
+  </thead>
+  <tbody>
+      {% for word, counttotal in worddictionary %}
+      <tr>
+      <td>{{word}}</td>
+      <td>{{counttotal}}</td>
+    </tr>
+  </tbody>
+{% endfor %}
+</table>
